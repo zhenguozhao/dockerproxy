@@ -30,15 +30,15 @@ use custom domain: support proxy multiple registries route by host
 - add more records and modify the config as you need
 ```javascript
 const routes = {
-  "docker.e-whisper.com": "https://registry-1.docker.io",
-  "quay.e-whisper.com": "https://quay.io",
-  "gcr.e-whisper.com": "https://k8s.gcr.io",
-  "k8s-gcr.e-whisper.com": "https://k8s.gcr.io",
-  "ghcr.e-whisper.com": "https://ghcr.io",
+  "docker.your-domain.com": "https://registry-1.docker.io",
+  "quay.your-domain.com": "https://quay.io",
+  "gcr.your-domain.com": "https://k8s.gcr.io",
+  "k8s-gcr.your-domain.com": "https://k8s.gcr.io",
+  "ghcr.your-domain.com": "https://ghcr.io",
 };
 ```
 - deploy this project to cloudflare workers
-- add `CNAME` **DNS record** of xxx.e-whisper.com to the workers.dev domain, like this: `${workername}.${username}.workers.dev`
-- add `xxx.e-whisper.com/*` to **HTTP routes of workers**. xxx is `docker` `quay` `gcr` ...
+- add `CNAME` **DNS record** of xxx.your-domain.com to the workers.dev domain, like this: `${workername}.${username}.workers.dev`
+- add `xxx.your-domain.com/*` to **HTTP routes of workers**. xxx is `docker` `quay` `gcr` ...
 
 
